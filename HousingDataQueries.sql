@@ -134,9 +134,7 @@ FROM [dbo].[Nashville Housing Data for Data Cleaning]
 
 --------------------------------------------------------------------------------------------------------------------------
 
---FINISH---
-
--- Change (binary) 1 and 0 to (varchar) Yes and No in "Sold as Vacant" field
+-- Changing the (binary) 1 and 0 to (varchar) Yes and No in "SoldAsVacant" field
 
 
 SELECT DISTINCT SoldAsVacant, COUNT(SoldAsVacant)
@@ -144,9 +142,9 @@ FROM [dbo].[Nashville Housing Data for Data Cleaning]
 GROUP BY SoldAsVacant
 ORDER BY 2
 
-
---SELECT SoldAsVacant  -- as SoldAsVacantUpdate
-	--, CASE WHEN SoldAsVacant = 1 THEN 'Yes'
+-- Working...
+SELECT SoldAsVacant  -- as SoldAsVacantUpdate
+	, CASE WHEN SoldAsVacant = 1 THEN 'Yes'
 		   WHEN SoldAsVacant = 0 THEN 'No'
 		   --ELSE SoldAsVacant
 		END AS Vacant_Status
@@ -154,11 +152,39 @@ ORDER BY 2
 -- WHERE SoldAsVacant = 1;
 
 
---UPDATE [dbo].[Nashville Housing Data for Data Cleaning]
-SET SoldAsVacant = 
+-- Solution
+
+SELECT SoldAsVacant
+	, CASE WHEN SoldAsVacant = 1 THEN 'Yes'
+		   WHEN SoldAsVacant = 0 THEN 'No'
+		   END AS Vacant_Status
+	FROM [dbo].[Nashville Housing Data for Data Cleaning]
+
+
+-- Creating new column (SoldAsVacant_temp) to store new string values 
+
+ALTER TABLE [dbo].[Nashville Housing Data for Data Cleaning]
+ADD SoldAsVacant_temp varchar(10);
+
+
+-- Updating the new column with the new values from the binary values
+
+UPDATE [dbo].[Nashville Housing Data for Data Cleaning]
+SET SoldAsVacant_temp = 
 	  CASE WHEN SoldAsVacant = 1 THEN 'Yes'
 		   WHEN SoldAsVacant = 0 THEN 'No'
-		   END 
+	  END;
+
+
+-- Dropping the oringinal SoldAsVacant column
+
+ALTER TABLE [dbo].[Nashville Housing Data for Data Cleaning]
+DROP COLUMN SoldAsVacant;
+
+
+-- Changing the newly updated SoldAsVacant_temp column to SoldAsVacant
+EXEC sp_rename '[dbo].[Nashville Housing Data for Data Cleaning].SoldAsVacant_temp', 'SoldAsVacant', 'COLUMN';
+
 
 
 SELECT *
@@ -222,9 +248,9 @@ FROM [dbo].[Nashville Housing Data for Data Cleaning]
 
 
 
------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
 
--- Remove Duplicates
+-- Delete Unused Columns
 
 
 
