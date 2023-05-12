@@ -176,7 +176,7 @@ SET SoldAsVacant_temp =
 	  END;
 
 
--- Dropping the oringinal SoldAsVacant column
+-- Dropping the original SoldAsVacant column
 
 ALTER TABLE [dbo].[Nashville Housing Data for Data Cleaning]
 DROP COLUMN SoldAsVacant;
