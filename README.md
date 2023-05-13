@@ -31,7 +31,7 @@ My goal is to provide the client with a clean, normalized dataset on the Nashvil
 ## Tech Stack
 - Microsoft SQL Server Management Studio
 
-### SQL Query Analysis
+## SQL Queries Analysis
 ### Query Methods
 - Date standardization.
 - Populating null values in a column based on a reference point (ParcelID column) by using a self-join on the table data.
