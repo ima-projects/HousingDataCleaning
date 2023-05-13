@@ -21,4 +21,13 @@ The objective is to clean and normalize the Nashville housing property dataset t
 ### Goal
 My goal is to provide the client with a clean, normalized dataset on the Nashville housing property market. The cleaned dataset should be ready for analysis, enabling the property management firm to generate insights and recommendations for their client's expansion plans. By achieving this goal, the firm aims to equip their client with valuable information about the Nashville housing market, including key trends, property prices, neighborhood characteristics, and any other relevant factors influencing the market such as identifying sold or vacant property. This will ultimately support the client in making informed business decisions related to their expansion strategy in Nashville.
 
+## Data Source
+- [Github data source containing Housing Data dataset](https://github.com/AlexTheAnalyst/PortfolioProjects/blob/main/Nashville%20Housing%20Data%20for%20Data%20Cleaning.xlsx)
+
+## Methods
+- SQL querying
+
+## Tech Stack
+- Microsoft SQL Server Management Studio
+
 
