@@ -8,6 +8,7 @@
 - [Methods](#methods)
 - [Tech Stack](#tech-stack)
 - [SQL Queries Analysis](#sql-queries-analysis)
+  * [Query Methods](#query-methods)
 - [Quick Analysis of Results](#quick-analysis-of-results)
   * [Key findings](#key-findings)
   * [Limitations and Suggestions for Optimization of the Dashboard](#limitations-and-suggestions-for-optimization-of-the-dashboard)
@@ -29,5 +30,14 @@ My goal is to provide the client with a clean, normalized dataset on the Nashvil
 
 ## Tech Stack
 - Microsoft SQL Server Management Studio
+
+### SQL Query Analysis
+### Query Methods
+- Date standardization.
+- Populating null values in a column based on a reference point (ParcelID column) by using a self-join on the table data.
+- Breaking out a column into individual columns by using SUBSTRINGS, CHARINDEX or PARSENAME.
+- Changing binary values in one column to string values by creating a new column.
+- Removing duplicates using CTEs (Common Table Expression).
+- Deleting unused columns.
 
 
