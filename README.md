@@ -9,9 +9,7 @@
 - [Tech Stack](#tech-stack)
 - [SQL Queries Analysis](#sql-queries-analysis)
   * [Query Methods](#query-methods)
-- [Quick Analysis of Results](#quick-analysis-of-results)
-  * [Key findings](#key-findings)
-  * [Limitations and Suggestions for Optimization of the Dashboard](#limitations-and-suggestions-for-optimization-of-the-dashboard)
+
 
 ## Business Problem
 Our international property management firm has a client interested in expanding their operations to the Nashville housing market. To support this expansion, the firm needs to gather comprehensive and reliable information about the Nashville housing property market. However, the available data requires cleaning and normalization to ensure its suitability for analysis.
@@ -39,5 +37,4 @@ My goal is to provide the client with a clean, normalized dataset on the Nashvil
 - Changing binary values in one column to string values by creating a new column.
 - Removing duplicates using CTEs (Common Table Expression).
 - Deleting unused columns.
-
 
