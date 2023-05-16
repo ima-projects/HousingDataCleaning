@@ -1,5 +1,7 @@
 # Housing Data Cleaning
 
+Utilizing Microsoft SQL Server to clean data.
+
 ## Table of Contents
 - [Business Problem](#business-problem)
   * [Objective](#objective)
